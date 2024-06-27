@@ -1,0 +1,186 @@
+[gd_scene load_steps=23 format=3 uid="uid://cukvf0g1im33r"]
+
+[ext_resource type="Texture2D" uid="uid://koibbdx4ch1u" path="res://img/Menu/fonmenu2.png" id="1_op72y"]
+[ext_resource type="Texture2D" uid="uid://dx4ywy7r5arw" path="res://img/Menu/VN3.png" id="4_4av5u"]
+[ext_resource type="Script" path="res://script/menuanim.gd" id="4_xtmh6"]
+[ext_resource type="Texture2D" uid="uid://bdj5hc61xn2ny" path="res://img/Menu/VN4.png" id="5_8525q"]
+[ext_resource type="Texture2D" uid="uid://c8wfrht12sihe" path="res://img/Menu/nv1.png" id="5_bps7i"]
+[ext_resource type="Texture2D" uid="uid://b0ql85kbaqe68" path="res://img/Menu/VN5.png" id="6_8efy1"]
+[ext_resource type="Texture2D" uid="uid://bmrgbyvff7n8u" path="res://img/Menu/nv2.png" id="6_j1jxl"]
+[ext_resource type="Texture2D" uid="uid://nnwm6mdrblug" path="res://img/Menu/nv3.png" id="7_m67vn"]
+[ext_resource type="Texture2D" uid="uid://dvotkbypr6j0p" path="res://img/Menu/nv4.png" id="8_jd3hg"]
+[ext_resource type="Texture2D" uid="uid://c6k7oxnwrmcht" path="res://img/Menu/CH1.png" id="10_7le54"]
+[ext_resource type="Texture2D" uid="uid://becbt8wj74iop" path="res://img/Menu/CH2.png" id="11_jrnck"]
+[ext_resource type="Texture2D" uid="uid://bv7xf88kjoliw" path="res://img/cindynude.webp" id="12_cnrw1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0sjy"]
+atlas = ExtResource("5_8525q")
+region = Rect2(0, 0, 450, 425)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60fbd"]
+atlas = ExtResource("6_8efy1")
+region = Rect2(0, 0, 450, 425)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuero"]
+atlas = ExtResource("4_4av5u")
+region = Rect2(0, 0, 450, 425)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebxul"]
+atlas = ExtResource("5_8525q")
+region = Rect2(0, 0, 450, 425)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kxade"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0sjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60fbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuero")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebxul")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t1br"]
+atlas = ExtResource("5_bps7i")
+region = Rect2(0, 0, 450, 425)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm1mo"]
+atlas = ExtResource("6_j1jxl")
+region = Rect2(0, 0, 450, 425)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edhyb"]
+atlas = ExtResource("7_m67vn")
+region = Rect2(0, 0, 450, 425)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3652"]
+atlas = ExtResource("8_jd3hg")
+region = Rect2(0, 0, 450, 425)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ftxv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0t1br")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm1mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edhyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3652")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_op72y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect"]
+visible = false
+position = Vector2(725, 605)
+sprite_frames = SubResource("SpriteFrames_kxade")
+centered = false
+script = ExtResource("4_xtmh6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect/AnimatedSprite2D"]
+position = Vector2(225, 213)
+sprite_frames = SubResource("SpriteFrames_1ftxv")
+script = ExtResource("4_xtmh6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -197.0
+offset_top = 121.0
+offset_right = 197.0
+offset_bottom = 347.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 80
+text = "Название 
+Игры"
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_7le54")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_jrnck")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -117.5
+offset_top = -397.0
+offset_right = 117.5
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Новая игра"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Загрузить
+"
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Настройки"
+
+[node name="Button4" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Выход"
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_cnrw1")

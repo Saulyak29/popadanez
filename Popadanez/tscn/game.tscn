@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvpuvhf2q3o3u"]
+
+[ext_resource type="Script" path="res://script/game.gd" id="1_k4ebe"]
+[ext_resource type="Texture2D" uid="uid://ccptvtfo4lt23" path="res://img/Ui/Portret.png" id="2_5f6by"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_k4ebe")
+
+[node name="Level" type="Node" parent="."]
+
+[node name="Ui" type="Node" parent="."]
+
+[node name="Control" type="Control" parent="Ui"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Ui/Control"]
+layout_mode = 1
+offset_right = 180.0
+offset_bottom = 180.0
+theme_override_constants/margin_left = -4
+theme_override_constants/margin_top = 8
+
+[node name="TextureButton" type="TextureButton" parent="Ui/Control/MarginContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_5f6by")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+limit_left = 0
+limit_top = 0
